@@ -29,6 +29,7 @@ const (
 	FlagWebsite     = "website"
 	FlagDescription = "description"
 	FlagAppMeta     = "appmeta"
+	FlagJSONMeta    = "jsonmeta"
 	FlagUser        = "user"
 	FlagReferrer    = "referrer"
 	FlagSeconds     = "seconds"
