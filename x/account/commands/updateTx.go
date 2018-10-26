@@ -21,7 +21,7 @@ func UpdateTxCmd(cdc *wire.Codec) *cobra.Command {
 		RunE:  sendUpdateTx(cdc),
 	}
 	cmd.Flags().String(client.FlagUser, "", "update user")
-	cmd.Flags().String(client.FlagJsonMeta, "", "user json meta")
+	cmd.Flags().String(client.FlagJSONMeta, "", "user json meta")
 	return cmd
 }
 
@@ -30,7 +30,7 @@ func sendUpdateTx(cdc *wire.Codec) client.CommandTxCallback {
 	return func(cmd *cobra.Command, args []string) error {
 		ctx := client.NewCoreContextFromViper()
 		username := viper.GetString(client.FlagUser)
-		jsonmeta := viper.GetString(client.FlagJsonMeta)
+		jsonmeta := viper.GetString(client.FlagJSONMeta)
 		msg := acc.NewUpdateAccountMsg(
 			username, jsonmeta)
 
